@@ -1,0 +1,20 @@
+{
+    "name": "alshahawi/laravel-translation-loader-gui",
+    "authors": [
+        {
+            "name": "Ahmed Al-Shahawi",
+            "email": "alshahawi@outlook.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.5.0|~5.6.0",
+        "illuminate/routing": "~5.5.0|~5.6.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Elnooronline\\LaravelTranslationLoaderGui\\Providers\\TranslationLoaderGuiProvider"
+            ]
+        }
+    }
+}
