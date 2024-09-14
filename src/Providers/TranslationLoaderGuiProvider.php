@@ -34,20 +34,21 @@ class TranslationLoaderGuiProvider extends ServiceProvider
         $this->loadViewsFrom($this->packagePath('resources/views'), 'translation-loader-gui');
 
         $this->mergeConfigFrom(
-            $this->packagePath('config/translation-loader-gui.php'), 'translation-loader-gui'
+            $this->packagePath('config/translation-loader-gui.php'),
+            'translation-loader-gui'
         );
 
         if ($this->app['config']->get('translation-loader-gui.enabled')) {
             $config = $this->app['config']->get('translation-loader-gui.route', []);
             $router->group($config, function ($router) {
-                $router->post('translation-loader', Controller::class.'@load')
-                    ->name('_translation-loader.load');
+                $router->post('translation-loader', Controller::class . '@load')
+                    ->name('_translation-loader.load')->middleware(['auth', 'verified']);
 
-                $router->get('translation-loader', Controller::class.'@index')
-                    ->name('_translation-loader.index');
+                $router->get('translation-loader', Controller::class . '@index')
+                    ->name('_translation-loader.index')->middleware(['auth', 'verified']);
 
-                $router->put('translation-loader/{languageLine}', Controller::class.'@update')
-                    ->name('_translation-loader.update');
+                $router->put('translation-loader/{languageLine}', Controller::class . '@update')
+                    ->name('_translation-loader.update')->middleware(['auth', 'verified']);
             });
         }
     }
@@ -70,6 +71,6 @@ class TranslationLoaderGuiProvider extends ServiceProvider
      */
     private function packagePath($path)
     {
-        return __DIR__."/../../$path";
+        return __DIR__ . "/../../$path";
     }
 }

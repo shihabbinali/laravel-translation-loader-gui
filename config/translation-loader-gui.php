@@ -6,7 +6,7 @@ return [
      */
     'enabled' => env('TRANSLATION_LOADER_GUI_ENABLED', true),
 
-    'name' => 'Translation Loader Gui',
+    'name' => 'Translation Dashboard',
 
     /**
      * The configuration for the route group.
@@ -23,7 +23,8 @@ return [
      * The locales that is supported to by managable.
      */
     'locales' => [
-        'ar',
+        'nl',
         'en',
+        'ar',
     ],
 ];

@@ -42,6 +42,8 @@ class Controller extends BaseController
             $group = $request->group;
             $lines = LanguageLine::where('group', $request->group)->get();
         }
+        $group = $request->group;
+        $lines = LanguageLine::where('group', $request->group)->get();
 
         return view('translation-loader-gui::index', compact('lines', 'group', 'groups'));
     }

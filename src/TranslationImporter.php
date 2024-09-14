@@ -6,6 +6,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Foundation\Application;
 use Illuminate\Translation\FileLoader;
 use Spatie\TranslationLoader\LanguageLine;
+use Illuminate\Support\Arr;
 
 class TranslationImporter
 {
@@ -59,7 +60,7 @@ class TranslationImporter
                 $files[] = "$locale/$group.php";
 
                 // Flatten a multi-dimensional associative array with dots.
-                $translationLines = array_dot(trans($group, [], $locale));
+                $translationLines = Arr::dot(trans($group, [], $locale));
 
                 foreach ($translationLines as $lineKey => $lineValue) {
 
