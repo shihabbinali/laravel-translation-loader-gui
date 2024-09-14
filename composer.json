@@ -1,6 +1,10 @@
 {
-    "name": "elnooronline/laravel-translation-loader-gui",
-    "keywords": ["laravel", "translations", "translator"],
+    "name": "shihabbinali/laravel-translation-loader-gui",
+    "keywords": [
+        "laravel",
+        "translations",
+        "translator"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -9,10 +13,11 @@
         }
     ],
     "require": {
-        "php": ">=5.6.0",
-        "illuminate/support": "~5.5.0|~5.6.0",
-        "illuminate/routing": "~5.5.0|~5.6.0",
-        "spatie/laravel-translation-loader": "^2.1"
+        "php": "^7.2|^8.0",
+        "illuminate/translation": "^11.9",
+        "illuminate/support": "^11.9",
+        "illuminate/routing": "^11.9",
+        "spatie/laravel-translation-loader": "^2.8"
     },
     "autoload": {
         "psr-4": {
